@@ -95,7 +95,7 @@ class BatchLinearRegression:
 
     def predict(self, X):
         return np.dot(X, self.beta)
-
+```
 
         
 # Explanation:
@@ -112,6 +112,7 @@ In this case, we will update the model’s parameters after seeing each individu
 # Simple incremental linear regression    
 # Example:
 
+```python
 import numpy as np
 class IncrementalLinearRegression:
     def __init__(self, learning_rate=0.01):
@@ -127,7 +128,7 @@ class IncrementalLinearRegression:
     
     def predict(self, X):
         return np.dot(X, self.beta)
-
+```
 
         
 # Explanation:
