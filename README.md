@@ -3,6 +3,8 @@
 Machine learning can be divided into two primary types based on how models learn from data:
 
 **Batch Learning:** The model learns from the entire dataset at once.
+
+
 **Incremental Learning (Online Learning):** The model learns from data incrementally, one instance (or a small batch) at a time.
 Let's explore each of these approaches in detail.
 
