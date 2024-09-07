@@ -70,15 +70,18 @@ Let’s walk through a simple batch learning example using linear regression.
 **Update the model parameters** using a learning algorithm like gradient descent.
 
 # Simple batch linear regression
-# Example:
 
+### Example:
+
+```python
 import numpy as np
+
 class BatchLinearRegression:
     def __init__(self, learning_rate=0.01, n_iterations=1000):
         self.learning_rate = learning_rate
         self.n_iterations = n_iterations
         self.beta = None
-    
+
     def fit(self, X, y):
         n_samples, n_features = X.shape
         # Initialize coefficients (parameters)
@@ -89,9 +92,10 @@ class BatchLinearRegression:
             gradient = (2 / n_samples) * np.dot(X.T, (y_pred - y))
             # Update coefficients
             self.beta -= self.learning_rate * gradient
-    
+
     def predict(self, X):
         return np.dot(X, self.beta)
+
 
         
 # Explanation:
