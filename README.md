@@ -41,7 +41,9 @@ In incremental learning, the model learns from data one sample (or a small batch
 **Memory Efficient:** The model doesn’t need to store the entire dataset, only the current data point(s) it is learning from.
 
 **Continuous Updates:** The model is updated as new data comes in, making it well-suited for scenarios where the data distribution changes over time (e.g., in a real-time system).
-Adaptable: It can adapt to new data without retraining the entire model.
+
+
+**Adaptable:** It can adapt to new data without retraining the entire model.
 
 # Example of Incremental Learning:
 Imagine you have a model predicting stock prices, and new data is constantly being streamed. In this case, the model needs to adjust its predictions continuously based on the latest data. With incremental learning, the model processes each new data point as it arrives and updates its parameters without requiring all past data to be available.
