@@ -84,6 +84,7 @@ class BatchLinearRegression:
     
     def predict(self, X):
         return np.dot(X, self.beta)
+
         
 # Explanation:
 
@@ -114,6 +115,8 @@ class IncrementalLinearRegression:
     
     def predict(self, X):
         return np.dot(X, self.beta)
+
+
         
 # Explanation:
 
