@@ -1,0 +1,557 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "67767b19",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006679,
+     "end_time": "2024-09-15T14:25:32.611126",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.604447",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# What Are Tensors?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dd866daa",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005542,
+     "end_time": "2024-09-15T14:25:32.622798",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.617256",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "\n",
+    "In machine learning and deep learning, tensors are the fundamental data structures used for computation. They can be thought of as generalized matrices that are used to represent data in higher dimensions. In simple terms, tensors are multi-dimensional arrays that can store data in various forms such as scalars, vectors, and matrices.\n",
+    "\n",
+    "Tensors are used extensively in machine learning frameworks like TensorFlow and PyTorch for operations on large datasets, especially when working with neural networks. They allow us to represent data in multiple dimensions, making it easier to perform complex computations on the data efficiently."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "04b714fe",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005751,
+     "end_time": "2024-09-15T14:25:32.634528",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.628777",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 0D Tensor/Scalars"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "10e6d4d1",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.648155Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.647625Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.660575Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.659390Z"
+    },
+    "papermill": {
+     "duration": 0.022917,
+     "end_time": "2024-09-15T14:25:32.663281",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.640364",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "a = np.array(2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "4697e619",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.677796Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.676682Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.685453Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.684264Z"
+    },
+    "papermill": {
+     "duration": 0.018526,
+     "end_time": "2024-09-15T14:25:32.687880",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.669354",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array(2)"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ca7a6de2",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005797,
+     "end_time": "2024-09-15T14:25:32.699927",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.694130",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**Count No Of Dimensions**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "e784f6c3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.714146Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.713690Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.721383Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.720198Z"
+    },
+    "papermill": {
+     "duration": 0.017779,
+     "end_time": "2024-09-15T14:25:32.723911",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.706132",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.ndim(a)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0f6f6c2f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00612,
+     "end_time": "2024-09-15T14:25:32.736444",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.730324",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 1D Tensor/Vector"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "c8f847bc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.751061Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.750601Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.760664Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.759447Z"
+    },
+    "papermill": {
+     "duration": 0.020758,
+     "end_time": "2024-09-15T14:25:32.763633",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.742875",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([1, 2, 3])"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "arr = np.array([1, 2, 3])\n",
+    "arr"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "65917c89",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.780500Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.780040Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.788169Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.786925Z"
+    },
+    "papermill": {
+     "duration": 0.018895,
+     "end_time": "2024-09-15T14:25:32.790804",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.771909",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "1"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.ndim(arr)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a82fed8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006325,
+     "end_time": "2024-09-15T14:25:32.803961",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.797636",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# 2D Tensor/Matrices "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "95be3093",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.819657Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.819203Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.827944Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.826485Z"
+    },
+    "papermill": {
+     "duration": 0.019922,
+     "end_time": "2024-09-15T14:25:32.830581",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.810659",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array([[1, 2, 3],\n",
+       "       [4, 5, 6],\n",
+       "       [7, 8, 9]])"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\n",
+    "matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "bd6617c4",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.847061Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.845728Z",
+     "iopub.status.idle": "2024-09-15T14:25:32.854181Z",
+     "shell.execute_reply": "2024-09-15T14:25:32.852911Z"
+    },
+    "papermill": {
+     "duration": 0.019292,
+     "end_time": "2024-09-15T14:25:32.856839",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.837547",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "2"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "np.ndim(matrix)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "fbdd4f8b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:32.874065Z",
+     "iopub.status.busy": "2024-09-15T14:25:32.872755Z",
+     "iopub.status.idle": "2024-09-15T14:25:48.952920Z",
+     "shell.execute_reply": "2024-09-15T14:25:48.951248Z"
+    },
+    "papermill": {
+     "duration": 16.09205,
+     "end_time": "2024-09-15T14:25:48.956096",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:32.864046",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import tensorflow as tf\n",
+    "\n",
+    "# Creating a 1-D Tensor (Vector)\n",
+    "vector = tf.constant([1, 2, 3, 4, 5])\n",
+    "\n",
+    "# Creating a 2-D Tensor (Matrix)\n",
+    "matrix = tf.constant([[1, 2], [3, 4], [5, 6]])\n",
+    "\n",
+    "# Creating a 3-D Tensor\n",
+    "tensor_3d = tf.constant([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "9f761c6f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:48.973365Z",
+     "iopub.status.busy": "2024-09-15T14:25:48.971710Z",
+     "iopub.status.idle": "2024-09-15T14:25:48.978829Z",
+     "shell.execute_reply": "2024-09-15T14:25:48.977742Z"
+    },
+    "papermill": {
+     "duration": 0.018154,
+     "end_time": "2024-09-15T14:25:48.981370",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:48.963216",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tf.Tensor([1 2 3 4 5], shape=(5,), dtype=int32)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(vector)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "5eaf8713",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:48.997429Z",
+     "iopub.status.busy": "2024-09-15T14:25:48.997009Z",
+     "iopub.status.idle": "2024-09-15T14:25:49.003646Z",
+     "shell.execute_reply": "2024-09-15T14:25:49.002267Z"
+    },
+    "papermill": {
+     "duration": 0.018386,
+     "end_time": "2024-09-15T14:25:49.006800",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:48.988414",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tf.Tensor(\n",
+      "[[1 2]\n",
+      " [3 4]\n",
+      " [5 6]], shape=(3, 2), dtype=int32)\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(matrix)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "e42b4cfc",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-09-15T14:25:49.023449Z",
+     "iopub.status.busy": "2024-09-15T14:25:49.022984Z",
+     "iopub.status.idle": "2024-09-15T14:25:49.030280Z",
+     "shell.execute_reply": "2024-09-15T14:25:49.028952Z"
+    },
+    "papermill": {
+     "duration": 0.018525,
+     "end_time": "2024-09-15T14:25:49.032915",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:49.014390",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tf.Tensor(\n",
+      "[[[1 2]\n",
+      "  [3 4]]\n",
+      "\n",
+      " [[5 6]\n",
+      "  [7 8]]], shape=(2, 2, 2), dtype=int32)\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "print(tensor_3d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "153750be",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007067,
+     "end_time": "2024-09-15T14:25:49.047398",
+     "exception": false,
+     "start_time": "2024-09-15T14:25:49.040331",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "dockerImageVersionId": 30761,
+   "isGpuEnabled": false,
+   "isInternetEnabled": true,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.14"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 21.279458,
+   "end_time": "2024-09-15T14:25:50.682279",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2024-09-15T14:25:29.402821",
+   "version": "2.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
